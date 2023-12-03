@@ -26,9 +26,17 @@ router.get('/all-users',authMiddleware, async (req, res) => {
     }));
 
     res.status(200).json({ users: sanitizedUsers });
-  } catch (error) {
+  }catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
+  
+    let errorMessage = 'Internal server error';
+    
+    if (error.message) {
+      errorMessage = error.message;
+    }
+  
+    res.status(500).json({ error: errorMessage });
   }
+  
 });
 module.exports = router;
