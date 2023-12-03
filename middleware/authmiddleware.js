@@ -13,7 +13,7 @@ const authMiddleware = async (req, res, next) => {
 
   try {
     // Verify the token
-    const decoded = jwt.verify(token, 'your-secret-key'); // Replace 'your-secret-key' with your actual secret key
+    const decoded = jwt.verify(token, 'hdjfhsdkjfsdhfdskjfhdsjfhdjfhksd'); // Replace 'your-secret-key' with your actual secret key
 
     // Find the user based on the decoded information
     const employee = await Employee.findById(decoded.employeeId);
