@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 const puppeteer = require('puppeteer');
 const router = express.Router();
 const intern = require('../model/internModel')
-
-
+const dotenv= require('dotenv')
+dotenv.config();
 // Create a nodemailer transporter using your email configuration
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
