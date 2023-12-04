@@ -24,7 +24,7 @@ async function generatePdfBuffer(internId) {
   const page = await browser.newPage();
   
   // Modify this URL or HTML content as per your requirements
-  await page.goto(`http://localhost:3000/Certificate/${internId}`, { waitUntil: 'networkidle0' });
+  await page.goto(`https://certificate-generation-backend.onrender.com/Certificate/${internId}`, { waitUntil: 'networkidle0' });
   
   const pdfBuffer = await page.pdf({ format: 'A4' });
   
